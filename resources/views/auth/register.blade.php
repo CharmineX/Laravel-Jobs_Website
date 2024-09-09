@@ -3,7 +3,7 @@
         Register
     </x-slot:heading>
 
-    <form method="POST" action="/jobs">
+    <form method="POST" action="/register">
         @csrf
 
         <div class="space-y-12">
@@ -15,7 +15,7 @@
                         <x-form-label for="first_name">First name</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="first_name" id="first_name" />
+                            <x-form-input name="first_name" id="first_name" required />
 
                             <x-form-error name="first_name" />
 
@@ -26,7 +26,7 @@
                         <x-form-label for="last_name">Last name</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="last_name" id="last_name" />
+                            <x-form-input name="last_name" id="last_name" required />
 
                             <x-form-error name="last_name" />
 
@@ -37,7 +37,7 @@
                         <x-form-label for="email">Email</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="email" id="email" type="email" />
+                            <x-form-input name="email" id="email" type="email" required />
 
                             <x-form-error name="email" />
 
@@ -48,7 +48,7 @@
                         <x-form-label for="password">Password</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="password" id="password" type="password" />
+                            <x-form-input name="password" id="password" type="password" required />
 
                             <x-form-error name="password" />
 
@@ -59,7 +59,7 @@
                         <x-form-label for="password_confirmation">Confirm Password</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="password_confirmation" id="password_confirmation" type="password_confirmation" />
+                            <x-form-input name="password_confirmation" id="password_confirmation" type="password_confirmation" required />
 
                             <x-form-error name="password_confirmation" />
 
