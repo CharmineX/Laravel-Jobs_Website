@@ -4,19 +4,11 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
-use function Pest\Laravel\get;
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::view('/', 'home');
 
-//Route::resource('jobs', JobController::class)->only(['index', 'show']);
-//Route::resource('jobs', JobController::class)->middleware('auth');
-
 Route::get('/jobs', [JobController::class, 'index']);
-Route::get('/jobs/create', [JobController::class, 'create']);
+Route::get('/jobs/create', [JobController::class, 'create'])->middleware('auth');
 Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
 Route::get('/jobs/{job}', [JobController::class, 'show']);
 
@@ -29,7 +21,6 @@ Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
 
 Route::view('/contact', 'contact');
 
-//Auth
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
